@@ -1,0 +1,51 @@
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@mixin size($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+@mixin screen-l{
+  @media only screen and (max-width: $screen-l){
+      @content;
+  }
+}
+@mixin screen-m{
+  @media only screen and (max-width: $screen-m){
+      @content;
+  }
+}
+@mixin screen-s{
+  @media only screen and (max-width: $screen-s){
+      @content;
+  }
+}
+@mixin screen-xs{    
+  @media only screen and (max-width: $screen-xs){
+      @content;
+  }
+}
+
+@mixin screen($max-width){
+  @media only screen and (max-width: $max-width+'px'){
+      @content;
+  }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
