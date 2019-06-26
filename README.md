@@ -1,1 +1,1 @@
-# Webpack template with nunjucks and saas
+# Webpack template with nunjucks and sass
